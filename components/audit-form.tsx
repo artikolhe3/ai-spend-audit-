@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { generateAudit } from "@/lib/audit";
+import { generateAudit } from "@/lib/audit-engine";
 
 export default function AuditForm() {
   const [tool, setTool] = useState("Cursor");

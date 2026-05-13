@@ -12,7 +12,6 @@ export function generateAudit(
     if (spend > 40) {
       recommendation =
         "Your current Cursor setup appears oversized for your likely usage. Cursor Pro can significantly reduce monthly cost for smaller engineering teams.";
-
       optimizedSpend = 20;
     }
   }
@@ -21,7 +20,6 @@ export function generateAudit(
     if (spend > 30) {
       recommendation =
         "You may be paying enterprise pricing without requiring advanced governance controls. ChatGPT Team likely fits your current workflow.";
-
       optimizedSpend = 30;
     }
   }
@@ -30,7 +28,6 @@ export function generateAudit(
     if (spend > 20) {
       recommendation =
         "Claude Pro may provide sufficient capabilities without the overhead of higher enterprise plans.";
-
       optimizedSpend = 20;
     }
   }
@@ -39,7 +36,6 @@ export function generateAudit(
     if (spend > 19) {
       recommendation =
         "GitHub Copilot Individual may be more cost efficient unless centralized admin controls are required.";
-
       optimizedSpend = 10;
     }
   }
@@ -48,17 +44,18 @@ export function generateAudit(
     if (spend > 25) {
       recommendation =
         "Gemini Pro likely covers your workload while reducing unnecessary infrastructure costs.";
-
       optimizedSpend = 25;
     }
   }
 
+  // fallback
   if (!recommendation) {
     recommendation =
-      "Your current AI tooling stack already appears reasonably optimized.";
+      "Your current AI tooling stack appears reasonably optimized with no major cost inefficiencies detected.";
+    optimizedSpend = spend;
   }
 
-  const savings = spend - optimizedSpend;
+  const savings = Math.max(0, spend - optimizedSpend);
 
   return {
     currentSpend: spend,
