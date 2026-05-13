@@ -1,113 +1,70 @@
 # AI Spend Audit
 
-AI Spend Audit is a SaaS-style web application that helps startups and engineering teams identify overspending across AI tools like Cursor, Claude, ChatGPT, GitHub Copilot, Gemini, and API-based AI services.
+AI Spend Audit is a lightweight SaaS-style web app that helps startups and engineering teams analyze their monthly AI tool spending and identify cost optimization opportunities.
 
-The platform analyzes current AI tooling costs, recommends cheaper alternatives or better-fit plans, estimates monthly and annual savings, and generates personalized optimization summaries.
+It provides instant audits of tools like Cursor, ChatGPT, Claude, GitHub Copilot, and Gemini, showing potential monthly and annual savings.
 
-## Live Demo
+---
+
+## 🚀 Live Demo
 
 https://ai-spend-audit-ecru.vercel.app/
 
 ---
 
-# Features
+## 📸 Screenshots
 
-- Multi-tool AI spend analysis
-- Savings optimization engine
-- Personalized AI-generated summaries
-- Shareable audit URLs
-- Email lead capture
-- Responsive UI
-- Real-time audit calculations
-- Plan-based optimization recommendations
+(Add screenshots or screen recording here)
+
+- Landing Page
+- Audit Results Page
+- Shareable Report View
 
 ---
 
-# Screenshots
+## 🧠 What it does
 
-## Homepage
+Users enter:
+- AI tools they use
+- subscription plan
+- monthly spend
+- number of seats
+- usage type (coding, writing, research, etc.)
 
-(Add screenshot here)
-
-## Audit Results
-
-(Add screenshot here)
-
-## Recommendations Section
-
-(Add screenshot here)
+The system then:
+- analyzes spending efficiency
+- suggests cheaper or optimized plans
+- calculates savings
+- generates a shareable audit report
 
 ---
 
-# Tech Stack
+## ⚙️ Tech Stack
 
-- Next.js
+- Next.js (App Router)
 - TypeScript
 - Tailwind CSS
-- Vercel
-- Supabase
-- OpenAI / Anthropic API
+- Vitest (unit testing)
+- Supabase (data storage)
+- Resend (email notifications)
 
 ---
 
-# Quick Start
+## 🧠 Key Features
 
-## Install dependencies
+- AI Spend Optimization Engine
+- Per-tool cost breakdown
+- Monthly + annual savings calculation
+- Shareable public audit URLs
+- Email lead capture system
+- AI-generated summary (LLM-based)
+- CI pipeline using GitHub Actions
+
+---
+
+## 🧪 Testing
+
+Run tests locally:
 
 ```bash
-npm install
-```
-
-## Run locally
-
-```bash
-npm run dev
-```
-
-## Production build
-
-```bash
-npm run build
-```
-
----
-
-# Decisions & Tradeoffs
-
-## 1. Rule-based audit engine instead of AI-generated pricing analysis
-
-I intentionally used deterministic logic for pricing calculations and optimization recommendations instead of relying on LLM-generated financial analysis. This improves consistency, transparency, and trustworthiness.
-
-## 2. Next.js App Router architecture
-
-I selected Next.js App Router because it simplifies routing, server rendering, metadata generation, and shareable dynamic URLs.
-
-## 3. Tailwind CSS over component-heavy UI frameworks
-
-Tailwind allowed faster iteration speed and cleaner customization without large bundle overhead.
-
-## 4. Email capture after value delivery
-
-Users see savings insights before being asked for contact information to improve trust and conversion quality.
-
-## 5. Lightweight MVP architecture
-
-The application prioritizes shipping speed and usability over premature scalability optimizations.
-
----
-
-# Deployment
-
-The project is deployed on Vercel:
-
-https://ai-spend-audit-ecru.vercel.app/
-
----
-
-# Future Improvements
-
-- Benchmarking against industry averages
-- PDF report export
-- Team collaboration support
-- Advanced AI spend forecasting
-- Vendor pricing change alerts
+npm test
